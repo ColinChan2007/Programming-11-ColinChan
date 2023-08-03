@@ -1,0 +1,35 @@
+import java.util.Date;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a new customer
+        Customer customer = new Customer("John Doe", 1000.0, 1500.0);
+
+        // Deposit money into checking and savings accounts
+        customer.deposit(400.0, "Checking");
+        customer.deposit(500.0, "Saving");
+
+        // Withdraw money from checking and savings accounts
+        customer.withdraw(200.0, "Checking");
+        customer.withdraw(1000.0, "Saving");
+
+        // Display deposits and withdraws
+        System.out.println("Deposits:");
+        customer.displayDeposits();
+
+        System.out.println("\nWithdraws:");
+        customer.displayWithdraws();
+    }
+}
+
+class Customer {
+    // Customer class implementation (as provided in the previous response)
+}
+
+class Deposit {
+    // Deposit class implementation (as provided in the previous response)
+}
+
+class Withdraw {
+    // Withdraw class implementation (as provided in the previous response)
+}
