@@ -1,0 +1,112 @@
+import java.util.Date;
+
+public class TestMain {
+    public static void main(String[] args) {
+        // Test 1: Basic deposits and withdrawals
+        Customer customer1 = new Customer("Alice", 2000.0, 3000.0);
+        customer1.deposit(500.0, "Checking");
+        customer1.withdraw(800.0, "Saving");
+        customer1.displayDeposits();
+        customer1.displayWithdraws();
+
+        // Test 2: Overdraft notification
+        Customer customer2 = new Customer("Bob", 1000.0, 500.0);
+        customer2.withdraw(800.0, "Checking");
+        customer2.withdraw(700.0, "Saving");
+
+        // Test 3: Multiple deposits and withdrawals
+        Customer customer3 = new Customer("Charlie", 1500.0, 2000.0);
+        customer3.deposit(300.0, "Checking");
+        customer3.deposit(400.0, "Saving");
+        customer3.withdraw(100.0, "Checking");
+        customer3.withdraw(150.0, "Saving");
+        customer3.displayDeposits();
+        customer3.displayWithdraws();
+    }
+}
+
+class Customer {
+    private String name;
+    private double checkingBalance;
+    private double savingBalance;
+    private ArrayList<Deposit> deposits;
+    private ArrayList<Withdraw> withdraws;
+
+    // Requires: name, initialCheckingBalance, initialSavingBalance
+    // Modifies: this
+    // Effects: Initializes a new Customer object with the given name, checking balance, and saving balance
+    public Customer(String name, double initialCheckingBalance, double initialSavingBalance) {
+        // Constructor implementation
+    }
+
+    // Requires: amount, account
+    // Modifies: this, deposits
+    // Effects: Deposits the specified amount into the given account, updates balance, and creates a new Deposit object
+    public void deposit(double amount, String account) {
+        // Deposit method implementation
+    }
+
+    // Requires: amount, account
+    // Modifies: this, withdraws
+    // Effects: Withdraws the specified amount from the given account, updates balance, and creates a new Withdraw object
+    //          Notifies the user of overdraft if it occurs
+    public void withdraw(double amount, String account) {
+        // Withdraw method implementation
+    }
+
+    // Requires: None
+    // Modifies: None
+    // Effects: Displays all the deposits made by the customer using the Deposit.toString() method
+    public void displayDeposits() {
+        // Display deposits implementation
+    }
+
+    // Requires: None
+    // Modifies: None
+    // Effects: Displays all the withdrawals made by the customer using the Withdraw.toString() method
+    public void displayWithdraws() {
+        // Display withdrawals implementation
+    }
+}
+
+class Deposit {
+    private double amount;
+    private Date date;
+    private String account;
+
+    // Requires: amount, date, account
+    // Modifies: this
+    // Effects: Initializes a new Deposit object with the given amount, date, and account
+    public Deposit(double amount, Date date, String account) {
+        // Constructor implementation
+    }
+
+    // Requires: None
+    // Modifies: None
+    // Effects: Returns a formatted string representation of the deposit
+    @Override
+    public String toString() {
+        // toString implementation
+    }
+}
+
+class Withdraw {
+    private double amount;
+    private Date date;
+    private String account;
+
+    // Requires: amount, date, account
+    // Modifies: this
+    // Effects: Initializes a new Withdraw object with the given amount, date, and account
+    public Withdraw(double amount, Date date, String account) {
+        // Constructor implementation
+    }
+
+    // Requires: None
+    // Modifies: None
+    // Effects: Returns a formatted string representation of the withdrawal
+    @Override
+    public String toString() {
+        // toString implementation
+    }
+}
